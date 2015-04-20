@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+	<div><a href="/submit">Create Deck</a></div>
+	<h1>Hi, {{ user.nickname }}!</h1>
+	<h2>Here are your decks</h2>
+	{% for item in posts %}
+	<div>
+	<p> {{ item.title}} </p>
+		{% for card in item.cards %}
+		<p><b>{{ card.word }}</b> : {{ card.definition }}</p>
+		{% endfor %}
+	</div>
+	{% endfor %}
+{% endblock %}

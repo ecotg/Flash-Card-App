@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+	<h1>Create Deck</h1>
+	<form action="" method="post" name="create deck">
+		{{ form.hidden_tag() }}
+		<p>
+			Enter the word:<br>
+			{{ form.word(size=80) }}<br>
+			{% for err in form.word.errors %}
+				<span style="color: red;">[{{ err }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			Enter its definition:<br>
+			{{ form.definition(size=80) }}<br>
+			{% for err in form.definition.errors %}
+				<span style="color: red;">[{{ err }}]</span>
+			{% endfor %}
+		</p>
+		<p><input type="submit" value="Save word"></p>
+	</form>
+{% endblock %}
